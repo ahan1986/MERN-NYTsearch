@@ -2,9 +2,46 @@
     width: 80vw;
     margin: auto;
     margin-top: 5%;
+    border-radius: 5%;
+    border: 2px solid black;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+}
+
+.card-header {
+    border-radius: 10%;
 }
 
 .card-title {
     display: flex;
     justify-content: center;
+    margin: 2%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-body {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+input {
+    width: 50%;
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+}
+
+button { 
+    width: 30%;
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -18,23 +18,40 @@ export default class Search extends Component {
         console.log(this.state.topic);
     }
 
+    handleFormSubmit = event => {
+
+    }
+
     render() {
         return (
             <div className="card">
                 <div className="card-header">
-                    <h3 className="card-title">Search</h3>
+                    <h3>Search</h3>
                 </div>
                 <div className="card-body">
                     <p className="card-title">Topic</p>
                     <input 
-                        placeholder="Topic"
                         value={this.state.topic}
                         name="topic"
-                        onChange={this.handleInputChange}
                         type="text"
+                        onChange={this.handleInputChange}
                     />
                     <p className="card-title">Start Year</p>
+                    <input 
+                        value={this.state.startYear}
+                        name="startYear"
+                        type="text"  
+                        onChange={this.handleInputChange}                     
+                    />
                     <p className="card-title">End Year</p>
+                    <input 
+                        value={this.state.endYear}
+                        name="endYear"
+                        type="text"
+                        onChange={this.handleInputChange}
+                    />
+
+                    <button className="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
                 </div>
             </div>
         )

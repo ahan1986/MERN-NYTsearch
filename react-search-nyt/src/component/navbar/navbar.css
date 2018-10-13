@@ -4,8 +4,16 @@
     height: 100%;
     margin: auto;
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
+    margin: auto;
+    text-decoration-line: underline;
+    font-size: 29px;
+}
+
+.subtitle {
     margin: auto;
 }

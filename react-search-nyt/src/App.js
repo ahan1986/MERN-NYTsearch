@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './component/navbar';
 import Search from './component/search';
+import { BrowserRouter, Route } from "react-router-dom";
 
 class App extends Component {
   render() {

@@ -14,8 +14,6 @@ export default class Search extends Component {
         this.setState({
             [name]: value
         });
-
-        console.log(this.state.topic);
     }
 
     handleFormSubmit = event => {

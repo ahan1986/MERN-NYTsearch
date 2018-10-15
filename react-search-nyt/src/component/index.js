@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './navbar';
 import Search from './search';
+import Saved from './saved';
 
 export default class FrontPage extends React.Component {
     render() {
@@ -8,6 +9,7 @@ export default class FrontPage extends React.Component {
             <div>
                 <Navbar />
                 <Search />
+                <Saved />
             </div>
         )
     }

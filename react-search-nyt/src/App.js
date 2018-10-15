@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from './component/navbar';
-import Search from './component/search';
+import FrontPage from './component/index';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 class App extends Component {
@@ -8,8 +7,7 @@ class App extends Component {
     return (
       <BrowserRouter className="App">
         <Switch>
-          <Route exact path="/" component={Navbar} />
-          
+          <Route exact path="/" component={FrontPage} />
         </Switch>
       </BrowserRouter>
     );

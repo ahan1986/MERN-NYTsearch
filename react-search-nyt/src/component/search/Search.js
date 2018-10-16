@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Search.css';
+import axios from 'axios';
 
 export default class Search extends Component {
     state = {
@@ -17,7 +18,16 @@ export default class Search extends Component {
     }
 
     handleFormSubmit = event => {
-
+        const APIKey = "1a45a81e8e1a4f8fafd77681279d4998";
+        axios.get("https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + APIKey + "&q=" + this.state.topic)
+        .then(res => {
+            console.log("response promise");
+            console.log(res);
+        })
+        .catch(err => {
+            console.log("response catching an error");
+            console.log(err);
+        })
     }
 
     render() {

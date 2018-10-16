@@ -3,7 +3,7 @@ import './Result.css';
 
 export default class Result extends Component {
     state = {
-        article: ['bob', 'dole', 'machine'],
+        article: [],
     }
 
   render() {

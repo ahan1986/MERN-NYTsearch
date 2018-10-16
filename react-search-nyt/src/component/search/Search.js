@@ -22,9 +22,11 @@ export default class Search extends Component {
     handleFormSubmit = event => {
         const newsapi = new NewsAPI("1a45a81e8e1a4f8fafd77681279d4998");
         // using newsapi package to get news information from the query that was typed in the topic input section.
-        newsapi.v2.topHeadlines({
+        newsapi.v2.everything({
             sources: 'bbc-news, the-verge',
             q: this.state.topic,
+            from: this.state.startYear + '-01-01',
+            to: this.state.endYear + "-30-12",
         }).then(res => {
             console.log("made correct api call to news sources");
         //setState the response to results in the state.

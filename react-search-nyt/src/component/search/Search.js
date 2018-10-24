@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import './Search.css';
 // import axios from 'axios';
-import NewsAPI from 'newsapi';
-import { FETCH_POSTS } from '../../actions/types';
 
-export default class Search extends Component {
+import { connect } from 'react-redux';
+
+import { searchPost } from '../../actions/actions';
+
+class Search extends Component {
     state = {
         topic: "",
         startYear: "",
@@ -67,3 +69,5 @@ export default class Search extends Component {
         )
     }
 }
+
+export default connect(null, {searchPost})(Search);

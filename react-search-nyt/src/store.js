@@ -9,6 +9,7 @@ const middleware = [thunk];
 const store = createStore(
     reducer,
     initialState,
+    applyMiddleware(thunk),
 );
 
 export default store;

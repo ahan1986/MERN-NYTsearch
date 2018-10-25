@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './Result.css';
+import { connect } from 'react-reduc';
 
-export default class Result extends Component {
+
+class Result extends Component {
     state = {
         article: [],
     }
@@ -24,3 +26,9 @@ export default class Result extends Component {
     )
   }
 }
+
+const mapStateToProps = state => ({
+
+});
+
+export default connect(mapStateToProps, {})(Result);

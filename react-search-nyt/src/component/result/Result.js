@@ -9,7 +9,7 @@ class Result extends Component {
         return (
             <div>
                 {/* without anything in the state in redux, this.props.result will be undefined */}
-                {this.props.result.length == undefined ? (
+                {this.props.result.length === undefined ? (
                     <div>
                         {/* if there's nothing in the state, this portion of the div will be displayed */}
                     </div>
@@ -22,13 +22,17 @@ class Result extends Component {
 
                             {this.props.result.map((saved, i) => (
 
-                                <div className="card-body" key={i}>
+                                <div className="card-bodyResult" key={i}>
                                     <div className="card-title">
                                         {/* had to specify author because react could not display the whole object onto the screen */}
-                                        {saved.title}
+                                        <h4><a href={saved.url}>{saved.title}</a></h4>
                                     </div>
+                                    <div>
+                                        {saved.description}
+                                    </div>
+                                    <hr />
                                 </div>
-
+                                
                             ))}
                         </div>
                     )}

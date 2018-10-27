@@ -1,8 +1,8 @@
 import { FETCH_POSTS, NEW_POST } from '../actions/types';
 
 const initialState = {
-    items: [],
-    findTopic: {}
+    itemsromInitialStateInnewReducerjs: [],
+    findTopicFromInitialStateInnewReducerjs: {}
 };
 
 export default (state = initialState, action) => {
@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
   case FETCH_POSTS:
     return { 
         ...state,
-        findTopic: action.payload
+        findTopicFromSwitchStatementInNewReducerjs: action.payload
     };
   case NEW_POST:
     return {

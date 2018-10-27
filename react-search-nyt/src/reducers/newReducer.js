@@ -3,13 +3,14 @@ import { FETCH_POSTS, NEW_POST } from '../actions/types';
 const initialState = {
     itemsromInitialStateInnewReducerjs: [],
     findTopicFromInitialStateInnewReducerjs: {}
+    //findTopicFromSwitchStatementInNewReducerjs: {}  //cannot use the same name in the switch statement for the initialState. I'm sure there is a way using es6....
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
 
   case FETCH_POSTS:
-    return { 
+    state = { 
         ...state,
         findTopicFromSwitchStatementInNewReducerjs: action.payload
     };

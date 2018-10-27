@@ -6,6 +6,10 @@ export default class Saved extends Component {
     state = {
         results: [],
     }
+    //method that will make api call to the server using AXIOS to load all the title and description that were saved to the database.
+    loadResult = () => {
+        //make api call to AXIOS
+    }
 
     render() {
         return (

@@ -4,6 +4,13 @@ import { connect } from 'react-redux';
 
 
 class Result extends Component {
+
+    // method that will make api calls to the server using AXIOS to post the title and description to the database to save
+    saveResult = () => {
+        console.log('clicked on saveResult');
+        //make api call to AXIOS
+    }
+
     render() {
         console.log(this.props.result);
         return (
@@ -22,7 +29,7 @@ class Result extends Component {
 
                             {this.props.result.map((saved, i) => (
 
-                                <div className="card-bodyResult" key={i}>
+                                <div className="card-bodyResult" key={i} onClick={this.saveResult}>
                                     <div className="card-title">
                                         {/* had to specify author because react could not display the whole object onto the screen */}
                                         <h4><a href={saved.url}>{saved.title}</a></h4>

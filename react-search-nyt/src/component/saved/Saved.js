@@ -4,7 +4,6 @@ import './Saved.css';
 import API from '../../utils/API';
 
 export default class Saved extends Component {
-
     state = {
         results: []
     }

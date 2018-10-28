@@ -6,5 +6,8 @@ export default {
     },
     saveResults: function(data) {
         return axios.post("/api/results", data);
+    },
+    deleteResults: function(id) {
+        return axios.delete("/api/results/", id);
     }
 };

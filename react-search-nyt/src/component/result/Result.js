@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './Result.css';
 import { connect } from 'react-redux';
 
+import API from '../../utils/API';
+
 
 class Result extends Component {
 
@@ -9,6 +11,12 @@ class Result extends Component {
     saveResult = () => {
         console.log('clicked on saveResult');
         //make api call to AXIOS
+        API.saveResults({
+            title: this.props.result.title,
+            description: this.props.result.description
+        })
+            .then(res => console.log('saving results to database'))
+            .catch(err => console.log(err));
     }
 
     render() {

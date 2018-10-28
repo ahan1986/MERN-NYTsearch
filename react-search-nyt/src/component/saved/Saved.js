@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 import './Saved.css';
 
+import API from '../../utils/API';
+
 export default class Saved extends Component {
 
     state = {
-        results: [],
+        results: []
+    } 
+
+    componentDidMount() {
+        API.loadResults()
+        .then(res => this.setState({ results:res.data }))
+        .catch(err => console.log(err));
     }
+
     //method that will make api call to the server using AXIOS to load all the title and description that were saved to the database.
     loadResult = () => {
         //make api call to AXIOS

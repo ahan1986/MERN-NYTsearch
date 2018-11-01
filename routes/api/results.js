@@ -9,6 +9,6 @@ router.route('/')
 // Matches with "/api/results/:id"
 router.route("/:id")
     .get(resultController.findById)
-    .delete(resultController.remove);
+    
 
 module.exports = router;

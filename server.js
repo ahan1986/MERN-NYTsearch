@@ -5,8 +5,8 @@ const
     routes = require('./routes'),
     app = express(),
     PORT = process.env.PORT || 3001;
+    db = require('./models');
 
-    console.log('hello1hello1hello1hello1hello1hello1hello1hello1hello1hello1hello1hello1hello1hello1')
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -17,8 +17,15 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
+// db.Result.create({
+//     title: 'earnest hemmingway',
+//     description: "what is up homie"
+// })
+//     .then(res => console.log(res))
+//     .catch(err => console.log(err));
+
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/NYSearch", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/NYSearch");
 
 //Start the API server
 app.listen(PORT, () => {

@@ -11,7 +11,7 @@ export default class Saved extends Component {
     componentDidMount() {
         API.loadResults()
             .then(res => this.setState({ results: res.data }))
-            .catch(err => console.log(err));
+            .catch(err => console.log('nothing here to see....'));
     }
 
     //method that will make api call to the server using AXIOS to load all the title and description that were saved to the database.

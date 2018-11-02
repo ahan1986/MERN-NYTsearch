@@ -27,8 +27,8 @@ class Search extends Component {
 
         const post = {
             topic: this.state.topic,
-            startYear: this.state.startYear,
-            endYear: this.state.endYear,
+            // startYear: this.state.startYear,
+            // endYear: this.state.endYear,
         }
 
         this.props.searchPost(post);

@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST } from './types';
+import { FETCH_POSTS } from './types';
 import NewsAPI from 'newsapi';
 
 export const searchPost = postData => dispatch => {
@@ -9,8 +9,8 @@ export const searchPost = postData => dispatch => {
         newsapi.v2.everything({
             sources: 'bbc-news, the-verge',
             q: postData.topic,
-            from: postData.startYear + '-09-30',
-            to: postData.endYear + "-10-24",
+            from: postData.startYear + '2018-10-29',
+            to: postData.endYear + "2018-10-31",
         }).then(res => {
             console.log("made correct api call to news sources");
             dispatch({

@@ -8,23 +8,24 @@ import API from '../../utils/API';
 class Result extends Component {
 
     // method that will make api calls to the server using AXIOS to post the title and description to the database to save
-    saveResult = () => {
+    saveResult = (i) => {
         console.log('clicked on saveResult');
+        // console.log(this.props.result[i].title);
+        
         //make api call to AXIOS
         API.saveResults({
-            title: this.props.result.title,
-            description: this.props.result.description
+            title: this.props.result[0].title,
+            description: this.props.result[0].description
         })
             .then(res => console.log('saving results to database'))
             .catch(err => console.log(err));
     }
 
     render() {
-        console.log(this.props.result);
         return (
             <div>
                 {/* without anything in the state in redux, this.props.result will be undefined */}
-                {this.props.result == undefined ? (
+                {this.props.result === undefined ? (
                     <div>
                         {/* if there's nothing in the state, this portion of the div will be displayed */}
                     </div>
@@ -38,7 +39,7 @@ class Result extends Component {
                             {this.props.result.map((saved, i) => (
 
                                 <div className="card-bodyResult" key={i} onClick={this.saveResult}>
-                                    <div className="card-title">
+                                    <div key={i} className="card-title">
                                         {/* had to specify author because react could not display the whole object onto the screen */}
                                         <h4><a href={saved.url}>{saved.title}</a></h4>
                                     </div>

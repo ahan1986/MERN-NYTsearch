@@ -14,12 +14,16 @@ export default (state = initialState, action) => {
         ...state,
         findTopicFromSwitchStatementInNewReducerjs: action.payload
     };
+    break;
   case NEW_POST:
     return {
         ...state,
         items: action.payload
     }
+    
   default:
-    return state
+    break;
   }
+  
+  return state;
 }

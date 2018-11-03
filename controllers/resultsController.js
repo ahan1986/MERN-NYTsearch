@@ -25,7 +25,8 @@ module.exports = {
   },
 //   delete: function(req, res) {
 //       db.Result
-//         .then(dbModel => dbModel.remove())
+//         .remove({})
+//         .then(dbModel => res.json(dbModel))
 //         .catch(err => res.status(422).json(err));
 //   }
 

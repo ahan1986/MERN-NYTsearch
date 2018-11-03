@@ -10,14 +10,11 @@ class Result extends Component {
     // method that will make api calls to the server using AXIOS to post the title and description to the database to save
     saveResult = (e) => {
         console.log('clicked on saveResult');
-        // console.log(this.props.result[i].title);
-        console.log(e);
-        // using the id through value in each div to pin point where the user clicked to find the right article to put into the database
-        const t = e.target;
+        
         //make api call to AXIOS
         API.saveResults({
-            title: this.props.result[0].title,
-            description: this.props.result[0].description
+            title: this.props.result[e].title,
+            description: this.props.result[e].description
         })
             .then(res => console.log('saving results to database'))
             .catch(err => console.log(err));

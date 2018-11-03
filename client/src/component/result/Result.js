@@ -8,10 +8,12 @@ import API from '../../utils/API';
 class Result extends Component {
 
     // method that will make api calls to the server using AXIOS to post the title and description to the database to save
-    saveResult = (i) => {
+    saveResult = (e) => {
         console.log('clicked on saveResult');
         // console.log(this.props.result[i].title);
-        
+        console.log(e);
+        // using the id through value in each div to pin point where the user clicked to find the right article to put into the database
+        const t = e.target;
         //make api call to AXIOS
         API.saveResults({
             title: this.props.result[0].title,
@@ -37,13 +39,13 @@ class Result extends Component {
                             </div>
 
                             {this.props.result.map((saved, i) => (
-
-                                <div className="card-bodyResult" key={i} onClick={this.saveResult}>
-                                    <div key={i} className="card-title">
+                                // need to pass onClick to a function so that saveResult() is not called the amount of times map is being rendered.  You can just do saveResult but to pass parameters, you need to () => this.saveResult(i)
+                                <div className="card-bodyResult" value={i} key={i} onClick={() => this.saveResult(i)}>
+                                    <div value={i} key={i} className="card-title">
                                         {/* had to specify author because react could not display the whole object onto the screen */}
-                                        <h4><a href={saved.url}>{saved.title}</a></h4>
+                                        <h4 value={i}><a href={saved.url}>{saved.title}</a></h4>
                                     </div>
-                                    <div>
+                                    <div value={i}>
                                         {saved.description}
                                     </div>
                                     <hr />

@@ -40,17 +40,17 @@ class Result extends Component {
 
                             {this.props.result.map((saved, i) => (
                                 // need to pass onClick to a function so that saveResult() is not called the amount of times map is being rendered.  You can just do saveResult but to pass parameters, you need to () => this.saveResult(i)
-                                <div className="card-bodyResult" value={i} key={i} onClick={() => this.saveResult(i)}>
-                                    <div value={i} key={i} className="card-title">
+                                <div className="card-bodyResult" key={i} onClick={() => this.saveResult(i)}>
+                                    <div key={i} className="card-title">
                                         {/* had to specify author because react could not display the whole object onto the screen */}
-                                        <h4 value={i}><a href={saved.url}>{saved.title}</a></h4>
+                                        <h4><a href={saved.url}>{saved.title}</a></h4>
                                     </div>
-                                    <div value={i}>
+                                    <div>
                                         {saved.description}
                                     </div>
                                     <hr />
                                 </div>
-                                
+
                             ))}
                         </div>
                     )}
